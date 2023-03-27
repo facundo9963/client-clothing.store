@@ -1,16 +1,24 @@
 import React from "react";
-
 import { Card, Col, Row, Button, Text } from "@nextui-org/react";
 
-export const Product = () => (
+export const Product = ({
+  category,
+  // description,
+  quantity,
+  name,
+  // onSale,
+  // price,
+  // subcategory,
+  // _id,
+}) => (
   <Card css={{ w: "300px", h: "400px" }}>
     <Card.Header css={{ position: "absolute", zIndex: 1, top: 5 }}>
       <Col>
         <Text size={12} weight="bold" transform="uppercase" color="#ffffffAA">
-          New
+          {category}
         </Text>
         <Text h3 color="black">
-          Acme camera
+          {name}
         </Text>
       </Col>
     </Card.Header>
@@ -36,11 +44,11 @@ export const Product = () => (
       <Row>
         <Col>
           <Text color="#000" size={12}>
-            Available soon.
+            Available {quantity} units
           </Text>
-          <Text color="#000" size={12}>
+          {/* <Text color="#000" size={12}>
             Get notified.
-          </Text>
+          </Text> */}
         </Col>
         <Col>
           <Row justify="flex-end">
@@ -51,7 +59,7 @@ export const Product = () => (
                 weight="bold"
                 transform="uppercase"
               >
-                Notify Me
+                Buy now
               </Text>
             </Button>
           </Row>
